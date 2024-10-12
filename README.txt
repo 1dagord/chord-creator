@@ -1,4 +1,4 @@
-Instructions for using chordCreator.py
+Instructions for using ChordCreator
 
  ___________   ____   ____   ___________
 |lshift	    | |z   | |x   | |rshift     |
