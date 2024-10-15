@@ -29,7 +29,10 @@ pygame.mixer.set_num_channels(24)
 
 class Tone(object):
 	"""
-	Takes in list of frequencies and a duration value and plays a tone
+	Plays a tone comprised of all frequencies and durations
+
+	:freqs:		list of float frequency values
+	:durations:	list of float duration values
 	"""
 	sampleRate = 44100	# [Hz]
 	freqs = [] 			# [Hz]
