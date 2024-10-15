@@ -66,7 +66,7 @@ Button(clefXCoords[2], 10, bWidth, 50, "Alto", DropDown.toAlto, "menu")
 Button(clefXCoords[3], 10, bWidth, 50, "Tenor", DropDown.toTenor, "menu")
 Button(clefXCoords[4], 10, bWidth, 50, "Bass", DropDown.toBass, "menu")
 
-def initScreen():
+def initScreen() -> None:
 	screen.fill("white")
 	bgLayer.fill("white")
 	fgLayer.fill("black")
@@ -82,7 +82,7 @@ def initScreen():
 	pg.display.flip()
 
 
-def main():
+def main() -> None:
 	initScreen()
 
 	done = False
@@ -174,3 +174,5 @@ def main():
 	pg.quit()
 
 if __name__ == "__main__": main()
+
+

@@ -21,7 +21,6 @@ class Clef(object):
 	def __str__(self):
 		return self.name.title() + " Clef on Staff " + str(self.sheet.staffId)
 
-	@classmethod
 	def changeClef(self, name: str) -> None:
 		"""
 		On Clef click, cycle between clefs and redraw staff
@@ -161,3 +160,6 @@ class Clef(object):
 			pg.draw.arc(screen, (0,0,0), (clefXCoord-40, rootLine+7, 30, 2*lineSpace-5), -2.1, 2.1, width=6)
 			pg.draw.arc(screen, (0,0,0), (clefXCoord-48, rootLine-2*lineSpace, 20, 2*lineSpace), 4.7, 5.8, width=5)
 			pg.draw.arc(screen, (0,0,0), (clefXCoord-48, rootLine, 20, 2*lineSpace), 0.5, 1.6, width=5)
+
+
+			

@@ -29,3 +29,6 @@ durationMultiplier = {"whole" : 1,
 					  "sixteenth" : 0.0625,
 					  "thirty-second" : 0.03125,
 					  "sixty-fourth" : 0.015625}
+
+
+					  

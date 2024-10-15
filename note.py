@@ -7,7 +7,14 @@ class Note(object):
 
 	accidentals = {"flat" : 0, "natural" : 1, "sharp" : 2}
 
-	def __init__(self, sheet, duration: str, key: str, octave: int, position=None, accidental="natural", addMode=None):
+	def __init__(self,
+				 sheet,
+				 duration: str,
+				 key: str,
+				 octave: int,
+				 position=None,
+				 accidental="natural",
+				 addMode=None):
 		self.sheet = sheet
 		self.duration = duration
 		self.key = key
@@ -81,3 +88,6 @@ class Note(object):
 
 		pg.display.update(screen.blit(bgLayer, (0,0), special_flags=pg.BLEND_RGBA_MIN))
 		pg.display.update(screen.blit(fgLayer, (0,0), special_flags=pg.BLEND_RGBA_MAX))
+
+
+		

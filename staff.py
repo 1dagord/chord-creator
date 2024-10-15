@@ -15,7 +15,11 @@ class Staff(object):
 	clef = None					# Clef attached to Staff
 	staffId = 0
 
-	def __init__(self, tl: list[int, int], br: list[int, int], timeSig=[4,4], clefName="treble"):
+	def __init__(self,
+				 tl: list[int, int],
+				 br: list[int, int],
+				 timeSig=[4,4],
+				 clefName="treble"):
 		self.topLeft = tl
 		self.bottomRight = br
 		self.timeSignature = timeSig
@@ -87,6 +91,12 @@ class Staff(object):
 	def addNote(self, dur: str, k: str, oc: int, acc="natural", aMode=None) -> None:
 		"""
 		Add Note to Staff based on attached Clef
+
+		:dur:	duration of note
+		:k:		pitch class of note
+		:oc:	octave of note
+		:acc:	accidental of note
+		:aMode:	mode of the GUI ("Create" or "Place")
 		"""
 		noteSpace = (self.bottomRight[1]-self.topLeft[1])/5 		# 3.5 note spaces between octaves (3/4 lines and 4/3 spaces)
 		octaveSpace = 3.5*noteSpace
@@ -173,3 +183,6 @@ class Staff(object):
 
 		self.notes.append([n])
 		n.drawNote(n.position)
+
+
+		

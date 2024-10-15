@@ -83,3 +83,6 @@ while AFreq*math.pow(2,exponent) < 20000:
                 octave += 1
             pitchClasses.update({keys[num]+str(octave) : freqA*math.pow(2, num/12)})
     exponent += 1
+
+
+    

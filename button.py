@@ -18,7 +18,14 @@ class Button(object):
 				  mode.activatePlayMode : mode.playMode, 
 				  None: None}
 
-	def __init__(self, left: int, top: int, width: int, height: int, text="BUTTON", clickFunction=None, buttonType="mode"):
+	def __init__(self,
+				 left: int,
+				 top: int,
+				 width: int, 
+				 height: int,
+				 text="BUTTON",
+				 clickFunction=None,
+				 buttonType="mode"):
 		self.left = left
 		self.top = top
 		self.buttonWidth = width
@@ -36,7 +43,7 @@ class Button(object):
 
 		self.buttonDict.update({self: self.buttonText})
 
-	def drawBackground(self):
+	def drawBackground(self) -> None:
 		self.buttonBGSurface = pg.Surface((self.buttonWidth, self.buttonHeight))
 		self.buttonBGSurface.fill('#222222')
 		self.buttonBGRect = pg.Rect(self.left+3, self.top+4, self.buttonWidth, self.buttonHeight)
@@ -108,3 +115,6 @@ class Button(object):
 													  self.buttonRect.height/2 - self.buttonText.get_rect().height/2])
 		
 		pg.display.update(screen.blit(self.buttonSurface, self.buttonRect))
+
+
+		

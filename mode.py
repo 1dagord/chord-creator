@@ -1,4 +1,6 @@
 """
+mode.py
+
 Determines whether multiple Notes can be placed
 	Create Mode: mode for creating chords (Notes not placed until Enter key pressed)
 	Place Mode: mode for placing Notes/chords (Notes places individually upon creation) *default*
@@ -33,3 +35,6 @@ def activateCreateMode() -> None:
 def activatePlayMode() -> None:
 	global active, playMode
 	active = playMode
+
+
+	
