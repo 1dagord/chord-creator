@@ -3,9 +3,6 @@ import pygame
 import math
 import time
 
-"""
-Original code from MedoAlmasry on https://stackoverflow.com/questions/56592522/python-simple-audio-tone-generator
-"""
 
 pygame.mixer.init(44100,-16,2,512)
 pygame.mixer.set_num_channels(24)
