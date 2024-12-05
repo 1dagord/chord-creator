@@ -28,5 +28,5 @@
 	- shift + backspace to erase all notes on staff
 
 
-https://github.com/user-attachments/assets/a4afb4ca-9d46-4d48-8776-fb50a521487f
+[Demo Video](https://github.com/user-attachments/assets/a4afb4ca-9d46-4d48-8776-fb50a521487f)
 
