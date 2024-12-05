@@ -1,5 +1,8 @@
-Instructions for using ChordCreator
+# ChordCreator
 
+## Instructions
+
+```
  ___________   ____   ____   ___________
 |lshift	    | |z   | |x   | |rshift     |
 |___________| |____| |____| |___________|
@@ -7,6 +10,7 @@ Instructions for using ChordCreator
 	|ctrl | |opt  | |cmd  |
 	|_____| |_____| |_____|
 	  2^3	  2^2	  2^1
+```
 
 - left-shift shifts note an octave BELOW clef base note
 - right-shift shifts note an octave ABOVE clef base note
@@ -22,3 +26,7 @@ Instructions for using ChordCreator
 
 - backspace to erase a note
 	- shift + backspace to erase all notes on staff
+
+
+https://github.com/user-attachments/assets/a4afb4ca-9d46-4d48-8776-fb50a521487f
+
