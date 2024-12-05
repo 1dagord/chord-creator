@@ -1,4 +1,4 @@
-# ChordCreator
+# Chord Creator
 
 ## Instructions
 
