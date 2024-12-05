@@ -1,5 +1,8 @@
 from settings import *
 import pygame as pg
+from button import Button
+import toneGenerator as toneGen
+
 
 class Clef(object):
 	name = ""			# name of Clef
@@ -30,7 +33,20 @@ class Clef(object):
 			return
 		self.sheet.clef = Clef(self.sheet, name)
 
-		initScreen()
+		# redraw screen with previous notes and new clef
+		screen.fill("white")
+		bgLayer.fill("white")
+		fgLayer.fill("black")
+
+		for button in Button.buttonDict:
+			button.drawBackground()
+			button.activate()
+
+		self.sheet.drawStaff()
+		self.sheet.clef.drawClef()
+		self.sheet.writeTimeSignature()
+
+		pg.display.flip()
 
 		previousNotes = [note for noteGroup in self.sheet.notes for note in noteGroup]
 		self.sheet.notes.clear()

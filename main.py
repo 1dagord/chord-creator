@@ -3,6 +3,7 @@ from staff import Staff
 from settings import *
 from clef import Clef
 from note import Note
+from menu import Menu
 import toneGenerator as toneGen
 import pygame as pg
 import mode
@@ -34,37 +35,20 @@ pg.font.init()
 pg.display.set_caption("Chord Creator")
 
 
-class DropDown(object):
-
-	def toTreble():
-		Clef.changeClef("treble")
-
-	def toSoprano():
-		Clef.changeClef("soprano")
-
-	def toAlto():
-		Clef.changeClef("alto")
-
-	def toTenor():
-		Clef.changeClef("tenor")
-
-	def toBass():
-		Clef.changeClef("bass")
-
-
 staff = Staff([0.05*width, (height//2)-50], [0.95*width, (height//2)+50], clefName="treble", timeSig=[4,4])
 
 buttonXCoords = [(width//2)-(1.5*200)-20+220*x for x in range(3)]
-Button(buttonXCoords[0], height-70, 200, 50, "Create Mode", mode.activateCreateMode)
-Button(buttonXCoords[1], height-70, 200, 50, "Place Mode", mode.activatePlaceMode)
-Button(buttonXCoords[2], height-70, 200, 50, "Play", mode.activatePlayMode)
+Button(buttonXCoords[0], height-70, 200, 50, "Create Mode", mode.activateCreateMode, staff=staff)
+Button(buttonXCoords[1], height-70, 200, 50, "Place Mode", mode.activatePlaceMode, staff=staff)
+Button(buttonXCoords[2], height-70, 200, 50, "Play", mode.activatePlayMode, staff=staff)
 bWidth = 130
 clefXCoords = [(width//2)-(2.5*bWidth)-(30*2.5)+(bWidth+30)*x for x in range(5)]
-Button(clefXCoords[0], 10, bWidth, 50, "Treble", DropDown.toTreble, "menu")
-Button(clefXCoords[1], 10, bWidth, 50, "Soprano", DropDown.toSoprano, "menu")
-Button(clefXCoords[2], 10, bWidth, 50, "Alto", DropDown.toAlto, "menu")
-Button(clefXCoords[3], 10, bWidth, 50, "Tenor", DropDown.toTenor, "menu")
-Button(clefXCoords[4], 10, bWidth, 50, "Bass", DropDown.toBass, "menu")
+Button(clefXCoords[0], 10, bWidth, 50, "Treble", Menu.toTreble, "menu", staff)
+Button(clefXCoords[1], 10, bWidth, 50, "Soprano", Menu.toSoprano, "menu", staff)
+Button(clefXCoords[2], 10, bWidth, 50, "Alto", Menu.toAlto, "menu", staff)
+Button(clefXCoords[3], 10, bWidth, 50, "Tenor", Menu.toTenor, "menu", staff)
+Button(clefXCoords[4], 10, bWidth, 50, "Bass", Menu.toBass, "menu", staff)
+
 
 def initScreen() -> None:
 	screen.fill("white")

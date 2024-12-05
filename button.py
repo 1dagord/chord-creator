@@ -25,13 +25,15 @@ class Button(object):
 				 height: int,
 				 text="BUTTON",
 				 clickFunction=None,
-				 buttonType="mode"):
+				 buttonType="mode",
+				 staff=None):
 		self.left = left
 		self.top = top
 		self.buttonWidth = width
 		self.buttonHeight = height
 		self.clickFunction = clickFunction
 		self.buttonType = buttonType
+		self.staff = staff
 		self.isPressed = False
 
 		self.buttonSurface = pg.Surface((self.buttonWidth, self.buttonHeight))
@@ -43,11 +45,13 @@ class Button(object):
 
 		self.buttonDict.update({self: self.buttonText})
 
+
 	def drawBackground(self) -> None:
 		self.buttonBGSurface = pg.Surface((self.buttonWidth, self.buttonHeight))
 		self.buttonBGSurface.fill('#222222')
 		self.buttonBGRect = pg.Rect(self.left+3, self.top+4, self.buttonWidth, self.buttonHeight)
 		pg.display.update(screen.blit(self.buttonBGSurface, self.buttonBGRect))
+
 
 	def checkForHover(self) -> None:
 		mousePos = pg.mouse.get_pos()
@@ -72,6 +76,7 @@ class Button(object):
 												  self.buttonRect.height/2 - self.buttonText.get_rect().height/2]))
 		pg.display.update(screen.blit(self.buttonSurface, self.buttonRect))
 
+
 	def activate(self) -> None:
 		mousePos = pg.mouse.get_pos()
 
@@ -84,7 +89,7 @@ class Button(object):
 					self.buttonSurface.fill(self.fillColors['pressed'])
 					if not self.isPressed:
 						self.isPressed = True
-						self.clickFunction()
+						self.clickFunction(self.staff.clef)
 			else:
 				if not pg.mouse.get_pressed()[0]:
 					self.isPressed = False
@@ -107,7 +112,7 @@ class Button(object):
 					if not self.isPressed:
 						self.isPressed = True
 						if self.clickFunction:
-							self.clickFunction()
+							self.clickFunction(self.staff.clef)
 			if not pg.mouse.get_pressed()[0]:
 				self.isPressed = False
 

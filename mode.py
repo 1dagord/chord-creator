@@ -24,15 +24,15 @@ def getActive() -> str:
 def getCurrent() -> int:
 	return active
 
-def activatePlaceMode() -> None:
+def activatePlaceMode(*args) -> None:
 	global active, placeMode
 	active = placeMode
 
-def activateCreateMode() -> None:
+def activateCreateMode(*args) -> None:
 	global active, createMode
 	active = createMode
 
-def activatePlayMode() -> None:
+def activatePlayMode(*args) -> None:
 	global active, playMode
 	active = playMode
 
